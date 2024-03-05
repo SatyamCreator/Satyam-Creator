@@ -1,0 +1,18 @@
+#scroll-to-top {
+  cursor: pointer;
+    position: fixed !important;
+    bottom: 10px;
+    right: 20px;
+    z-index: 99;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    display: none;
+    background-color: rgba(79, 139, 150, 0.534) !important;
+    color: white !important;
+  }
+
+  #scroll-to-top:hover {
+    background-color: rgba(17, 112, 129, 0.719) !important;
+  }
+  

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="style/style.css"> -->
+    <script src="style/darkmode.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" integrity="sha512-dUOcWaHA4sUKJgO7lxAQ0ugZiWjiDraYNeNJeRKGOIpEq4vroj1DpKcS3jP0K4Js4v6bXk31AAxAxaYt3Oi9xw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Convert To Case</title>
+    <link rel="stylesheet" href="style/mystyle.css">
+<!-- <link rel="stylesheet" href="style/style.css"> -->
+<link rel="stylesheet" href="Sharebtn/style.css">
+
+   
+  
+</head>
+<body>
+    
+    <header id="navbar"></header>
+
+    <div
+        class="container-fluid py-5"
+    >
+        <div
+            class="row justify-content-center align-items-center g-2"
+        >
+            <div class="col-sm-8">
+                <h1 class="text-center h1">Convert To Case</h1>
+
+                
+                <textarea class="form-control mb-4 shadow" id="userInput"  rows="5" placeholder="Enter text here"></textarea>
+
+                <div class="d-flex justify-content-between align-items-lg-center">
+                    <div>
+                        <button class="btn btn-light border m-1" id="upperbtn">UPPER CASE</button>
+                        <button class="btn btn-light border m-1" id="lowerbtn">lower case</button>
+                        <button class="btn btn-light border m-1" id="capitalizedbtn">Capitalize</button>
+                        <button class="btn btn-light border m-1" id="clearbtn">Clear</button>
+                    </div>
+
+                    <div>
+                        <button class="btn btn-light border m-1" id="copybtn">Copy</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="menu-container">
+        <div class="menu-toggle-btn">
+            <i class="ri-add-fill"></i>
+        </div>
+        <ul class="menu-list">
+            <li class="menu-item">
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+            </li>
+            <li class="menu-item">
+                <a href="#"><i class="ri-twitter-fill"></i></a>
+            </li>
+            <li class="menu-item">
+                <a href="#"><i class="ri-whatsapp-fill"></i></a>
+            </li>
+        </ul>
+    </div>
+
+<script>
+    // JavaScript code to convert input to uppercase on button click
+    let inputElement = document.getElementById("userInput");
+    let upperbtn = document.getElementById("upperbtn");
+    let lowerbtn = document.getElementById("lowerbtn");
+    let capitalizedbtn = document.getElementById("capitalizedbtn");
+    let clearbtn = document.getElementById("clearbtn");
+    let copybtn = document.getElementById("copybtn");
+
+    // Add an event listener to the button
+    upperbtn.addEventListener("click", function() {
+        let inputValue = inputElement.value;
+        let uppercaseValue = inputValue.toUpperCase();
+        inputElement.value = uppercaseValue;
+    });
+
+        // Add an event listener to the button
+        lowerbtn.addEventListener("click", function() {
+        let inputValue = inputElement.value;
+        let lowercaseValue = inputValue.toLowerCase();
+        inputElement.value = lowercaseValue;
+    });
+
+            // Add an event listener to the button
+        capitalizedbtn.addEventListener("click", function() {
+        let inputValue1 = inputElement.value;
+        let inputValue2 = inputValue1.toLowerCase();
+        let inputValue = inputValue2.split(' ');
+        let capitalizedWords = inputValue.map(inputValue => inputValue.charAt(0).toUpperCase() + inputValue.slice(1));
+        let capitalizedString = capitalizedWords.join(' ');
+        // let capitalizedbtn = inputValue.toCapitalizedCase;
+        inputElement.value = capitalizedString;
+    });
+
+        // Add an event listener to the button
+        clearbtn.addEventListener("click", function() {
+        let inputValue = inputElement.value;
+        let clearValue = inputValue.value = "";
+        inputElement.value = clearValue;
+    });
+
+    
+    // Add an event listener to the button
+//     copybtn.addEventListener("click", function() {
+//   var inputValue = inputElement.value;
+//   if (inputValue) {
+//     navigator.clipboard.writeText(inputValue)
+//       .then(function() {
+//         alert("Text copied to clipboard: " + inputValue);
+//       })
+//       .catch(function(err) {
+//         console.error('Unable to copy text to clipboard', err);
+//       });
+//   } else {
+//     alert("Input value is null or empty" + inputValue);
+//     console.error('Input value is null or empty');
+//   }
+// });
+
+
+
+copybtn.addEventListener("click", function() {
+      /* Get the text field */
+      var inputValue = inputElement;
+      if (inputValue.value) {
+        inputValue.select();
+        inputValue.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+        alert("Text copied to clipboard: " + inputValue.value);
+  } else {
+        alert("Input value is null or empty" + inputValue.value);
+  }
+    });
+
+
+
+
+</script>
+
+
+<script src="Pages/Navbar.js"></script>
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="Sharebtn/script.js"></script>
+</body>
+</html>
